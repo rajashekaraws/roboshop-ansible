@@ -1,1 +1,2 @@
-CREATE_APP_USER: yes
+#CREATE_APP_USER: yes
+COMPONENT: frontend
