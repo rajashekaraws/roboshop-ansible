@@ -1,15 +1,5 @@
-#  if [ ! -z  "$APP_USER" ]; then
-#    PRINT "Adding Application User"
-#    id roboshop &>>$LOG
-#    if [ $? -ne 0 ]; then
-#    useradd roboshop &>>$LOG
-#    fi
-#    STAT $?
-#    fi
-#
-#    PRINT "Download App Content"
-#    curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/roboshop-devops-project/$COMPONENT/archive/main.zip" &>>$LOG
-#    STAT $?
+
+
 #
 #    PRINT "Remove Previous Version of App"
 #    cd $APP_LOC &>>$LOG
@@ -30,4 +20,21 @@
   ansible.builtin.get_url:
     url: https://github.com/roboshop-devops-project/{{ COMPONENT }}/archive/main.zip
     dest: /tmp/{{ COMPONENT }}.ZIP
+
+- name: Remove Previous Version of App
+  ansible.builtin.file:
+    path: "{{ APP_LOC }}"
+    state: absent
+
+- name: Download App Content & Extract it
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/{{ COMPONENT }}/archive/main.zip
+    dest: "/tmp"
+    remote_src: yes
+
+- name: Copy Extracted App Content to App Location
+  ansible.builtin.copy:
+    src: /tmp/{{COMPONENT}}-main/
+    dest: "{{ APP_LOC }}"
+    remote_src: yes
 
