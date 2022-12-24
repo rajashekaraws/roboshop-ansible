@@ -23,7 +23,7 @@
 
 - name: Download App Content & Extract it
   ansible.builtin.unarchive:
-    src: https://github.com/rajashekaraws/{{COMPONENT}}.git
+    src: https://github.com/rajashekaraws/{{COMPONENT}}/archive/refs/heads/main.zip
     dest: "/tmp"
     remote_src: yes
 
