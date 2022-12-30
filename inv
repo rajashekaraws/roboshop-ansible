@@ -1,29 +1,29 @@
 [FRONTEND]
-dev-frontend.devopsb69.online
+dev-frontend.rajashekar.online
 
 [USER]
-dev-user.devopsb69.online
+dev-user.rajashekar.online
 
 [CATALOGUE]
-dev-catalogue.devopsb69.online
+dev-catalogue.rajashekar.online
 
 [CART]
-dev-cart.devopsb69.online
+dev-cart.rajashekar.online
 
 [MONGODB]
-dev-mongodb.devopsb69.online
+dev-mongodb.rajashekar.online
 
 [REDIS]
-dev-redis.devopsb69.online
+dev-redis.rajashekar.online
 
 [MYSQL]
-dev-mysql.devopsb69.online
+dev-mysql.rajashekar.online
 
 [SHIPPING]
-dev-shipping.devopsb69.online
+dev-shipping.rajashekar.online
 
 [PAYMENT]
-dev-payment.devopsb69.online
+dev-payment.rajashekar.online
 
 [RABBITMQ]
-dev-rabbitmq.devopsb69.online
+dev-rabbitmq.rajashekar.online
